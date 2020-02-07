@@ -1,0 +1,36 @@
+{% extends "basetemplate.html" %}
+<html>
+<head>
+</head>
+
+<body>
+{% block content %}
+
+<form action = 'login' method = 'post' >
+{% csrf_token %}
+<center>
+<div>
+<br><br><br><br><br><br><br><br>
+<h1> Enter your credentials </h1>
+<br>
+<input type="text" name="username" placeholder="username"><br><br>
+<input type="password" name="password" placeholder="password"><br><br>
+<input type = "Submit" >
+</div>
+</center>
+</form>
+<br><br>
+<center>
+<div>
+{% for message in messages %}
+<h3> {{message}} </h3>
+{% endfor %}
+</div>
+</center>
+<br><br><br><br>
+
+{% endblock %}
+
+
+</body>
+</html>
